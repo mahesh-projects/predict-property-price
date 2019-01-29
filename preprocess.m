@@ -43,7 +43,7 @@ area = data(:, 9) ./ 1000;  % Scale Area - divide each value by 1000
 %Use Horizontal Concatenation to re-arrange the dataset https://octave.org/doc/v4.4.0/Rearranging-Matrices.html
 result = horzcat(propertyNumber, propertyConfig, area, soldPrice);
 
-result = result(randperm(end),:); % Randomize dataset i.e. shuffle rows
+result = result(randperm(end),:); % Randomize dataset i.e. shuffle rows http://www.alecjacobson.com/weblog/?p=2399
 
 csvwrite('data/experiment_2/full_data_set_experiment2.csv', result);
 fprintf('Number of examples %f \n', m);
@@ -54,6 +54,45 @@ pause;
 
 %% ==================== Split data into Training, Testing, Validation ====================
 
-% TBC %
+% Split Train, Test and Validation set into 70 - 20 -  10 proportion
+
+% set probabilityTrain = 0.7
+% set probabilityTest = 0.2
+% set probabilityVal = 0.1
+fullData = csvread('data/experiment_2/full_data_set_experiment2.csv');
+
+pTrain = 0.7;
+pTest = 0.2;
+pVal = 0.1;
+
+N = size(result,1);
+
+%create a logical index vector
+indexVec = false(N, 1);
+indexVec(1:round(pTrain*N)) = true;
+indexVec = indexVec(randperm(N));
+
+% Training Data will be 70% of the dataset that is randomized 
+trainData = result(indexVec, :);
+
+% Save remaining data 
+dataRem = result(~indexVec, :);
+
+% Create another logical vector - this time to split remaining data into test and validation
+indexVec_rem = false(size(dataRem, 1),1);
+
+% Randomize remaining data 
+indexVec_rem(1:round(pTest*N)) = true;
+
+% Split remaining data into 20% test data
+testData = dataRem(indexVec_rem, :);
+
+% 10% validation data
+valData = dataRem(~indexVec_rem, :);
+
+
+fprintf('Training Dataset size %f \n', size(trainData));
+fprintf('Training Dataset size %f \n', size(testData));
+fprintf('Training Dataset size %f \n', size(valData));
 
 %% =======================================================================================
