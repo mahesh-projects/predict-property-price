@@ -1,4 +1,4 @@
-%% ==================== Preprocess data in sold_data.csv ====================
+% ==================== Preprocess data in sold_data.csv ====================
 
 fprintf('Prepocessing data - Step 1 - Select data in first 9 columns of raw_input... \n');
 % Use csvread to select the first 9 features from the raw datset
@@ -95,4 +95,10 @@ fprintf('Training Dataset size %f \n', size(trainData));
 fprintf('Training Dataset size %f \n', size(testData));
 fprintf('Training Dataset size %f \n', size(valData));
 
+
+csvwrite('data/experiment_2/multi_training_data.csv', trainData);
+
+csvwrite('data/experiment_2/multi_test_data.csv', testData);
+
+csvwrite('data/experiment_2/multi_validation_data.csv', valData);
 %% =======================================================================================

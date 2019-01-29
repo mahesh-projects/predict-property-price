@@ -17,7 +17,7 @@ clear ; close all; clc
 fprintf('Loading data ...\n');
 
 %% Load Data
-data = load('data/experiment_1/multi_training_set.csv');
+data = load('data/experiment_2/multi_training_data.csv');
 X = data(:, 2:5);
 y = data(:, 6);
 m = length(y);
@@ -53,7 +53,7 @@ theta = zeros(5, 1);
 % ============================================================
 % Choose some alpha value
 alpha_trial_1 = 0.01;
-num_iters_trial_1 = 400;
+num_iters_trial_1 = 1000;
 [theta_trial_1, J_history_trial_1] = gradientDescentMulti(X, y, theta, alpha_trial_1, num_iters_trial_1);
 
 
@@ -61,14 +61,14 @@ num_iters_trial_1 = 400;
 % Trial 2: Find J for alpha = 0.1; num_iters = 400;
 % ============================================================
 alpha_trial_2 = 0.1;
-num_iters_trial_2 = 400;
+num_iters_trial_2 = 1000;
 [theta_trial_2, J_history_trial_2] = gradientDescentMulti(X, y, theta, alpha_trial_2, num_iters_trial_2);
 
 % ============================================================
 % Trial 3: Find J for alpha = 0.001; num_iters = 400;
 % ============================================================
 alpha_trial_3 = 0.001;
-num_iters_trial_3 = 400;
+num_iters_trial_3 = 2000;
 [theta_trial_3, J_history_trial_3] = gradientDescentMulti(X, y, theta, alpha_trial_3, num_iters_trial_3);
 
 % Plot the convergence graph
@@ -97,7 +97,7 @@ fprintf(' %f \n', theta_trial_3);
 fprintf('\n');
 
 % Set theta to the best forming from the above trials
-theta = theta_trial_2;
+theta = theta_trial_3;
 
 % Estimate the price of a 1650 sq-m, 3 br house, 2 bathroom, 1 car park
 % ====================== YOUR CODE HERE ================================

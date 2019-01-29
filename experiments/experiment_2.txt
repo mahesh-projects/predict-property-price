@@ -21,3 +21,135 @@ Validation Set:
 
 ========================================================================================================================================
 
+====================================================================
+== linearReg_SingleFeature.m 
+== (i.e. use Area as single feature to predict sold price)
+====================================================================
+
+% Some gradient descent settings
+iterations = 1500;
+alpha = 0.01;
+
+Theta found by gradient descent: 4.575703 1.322713 
+For area = 1785 sq.m, we predict a sold price of:
+ $456691.228202
+For area = 853 sq.m, we predict a sold price of:
+ $280867.905655
+For area = 190 sq.m, we predict a sold price of:
+ $155791.872556
+
+iterations = 2000;
+alpha = 0.001;
+Theta found by gradient descent: 0.738084 2.024937 
+For area = 1785 sq.m, we predict a sold price of:
+ $435259.699892
+For area = 853 sq.m, we predict a sold price of:
+ $246535.546167
+For area = 190 sq.m, we predict a sold price of: 
+ $112282.205052
+
+===================================================================
+== Actual Values
+===================================================================
+
+Actual value for property 1785 sq.m (109954186,1.785,3,2,1,8)
+  $ 800000
+Actual value for property 853 sq.m (109754006,0.853,4,3,2,8.75)
+  $ 875000
+Actual value for property 190 sq.m (test data ref: 109795286,0.19,3,2,1,4.98)
+  $ 498000
+
+========================================================================================================================================
+
+
+==================================================================================
+== linearReg_MultiFeature.m 
+== (i.e. use Area, #Bedroom, #Bathroom, #Carpark as features to predict sold price)
+===================================================================================
+Alpha = 0.001, Iterations = 400
+
+Theta computed from gradient descent - Trial 3: 
+ 2.321088 
+ 0.462590 
+ 0.543406 
+ 0.208429 
+ 0.072111 
+
+Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
+ $297859.973185
+Predicted price of a 853 sq-m, 4 br house (using gradient descent):
+ $372877.906730
+Predicted price of a 190 sq-m, 3 br house (using gradient descent):
+ $217597.894073
+========================================================================================================================================
+
+Alpha = 0.01, Iterations = 400
+
+Theta computed from gradient descent - Trial 2: 
+ 7.037565 
+ 0.889942 
+ 1.351138 
+ -0.075983 
+ 0.286055 
+
+
+Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
+ $869421.764955
+Predicted price of a 853 sq-m, 4 br house (using gradient descent):
+ $1020197.824723
+Predicted price of a 190 sq-m, 3 br house (using gradient descent):
+ $715011.514524
+
+ ========================================================================================================================================
+
+ Alpha = 0.001, Iterations = 1000
+
+ Theta computed from gradient descent - Trial 3: 
+ 4.449884 
+ 0.740626 
+ 0.919794 
+ 0.238377 
+ 0.157137 
+
+Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
+ $556223.716793
+Predicted price of a 853 sq-m, 4 br house (using gradient descent):
+ $677759.894837
+Predicted price of a 190 sq-m, 3 br house (using gradient descent):
+ $427720.663100
+========================================================================================================================================
+
+Alpha = 0.001, Iterations = 1500
+
+Theta computed from gradient descent - Trial 3: 
+ 5.468450 
+ 0.825564 
+ 1.066923 
+ 0.187842 
+ 0.204498 
+
+Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
+ $675716.106646
+Predicted price of a 853 sq-m, 4 br house (using gradient descent):
+ $811785.919911
+Predicted price of a 190 sq-m, 3 br house (using gradient descent):
+ $532475.711362
+
+========================================================================================================================================
+
+Alpha = 0.001, Iterations = 2000
+
+Theta computed from gradient descent - Trial 3: 
+ 6.086086 
+ 0.862610 
+ 1.151748 
+ 0.129432 
+ 0.235506 
+
+Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
+ $747562.300301
+Predicted price of a 853 sq-m, 4 br house (using gradient descent):
+ $889920.641245
+Predicted price of a 190 sq-m, 3 br house (using gradient descent):
+ $597894.220247
+========================================================================================================================================

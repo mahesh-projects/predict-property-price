@@ -13,7 +13,7 @@ clear ; close all; clc
 
 %% ======================= Part 1: Plotting =======================
 fprintf('Plotting Data ...\n');
-data = load('data/experiment_1/multi_training_set.csv');
+data = load('data/experiment_2/multi_training_data.csv');
 X = data(:, 2); y = data(:, 6);
 m = length(y); % number of training examples
 
@@ -31,8 +31,8 @@ X = [ones(m, 1), data(:,2)]; % Add a column of ones to x
 theta = zeros(2, 1); % initialize fitting parameters
 
 % Some gradient descent settings
-iterations = 1500;
-alpha = 0.01;
+iterations = 2000;
+alpha = 0.001;
 
 % compute and display initial cost
 computeCost(X, y, theta)
