@@ -13,7 +13,7 @@ clear ; close all; clc
 
 %% ======================= Part 1: Plotting =======================
 fprintf('Plotting Data ...\n');
-data = load('data/multi_training_set.csv');
+data = load('data/experiment_1/multi_training_set.csv');
 X = data(:, 2); y = data(:, 6);
 m = length(y); % number of training examples
 

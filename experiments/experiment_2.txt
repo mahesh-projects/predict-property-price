@@ -1,0 +1,23 @@
+========================================================================================================================================
+Experiment 2: Scale Experiment 1 to entire dataset split as training, testing, validation sets
+========================================================================================================================================
+Conditions:
+- Preprocess raw dataset
+- Select Features for multi variable linear regression
+- Randomize the dataset
+
+Training Set:
+- 70% of total size
+- TrainingValues are normalized
+
+Testing Set:
+- 20% of total size
+- Automate the accuracy calculation for (i.e. small, medium, large area values) from 20 test values
+
+
+Validation Set:
+- 10% of total size
+- DO NOT use this until all the experiments are complete 
+
+========================================================================================================================================
+

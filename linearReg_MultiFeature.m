@@ -17,7 +17,7 @@ clear ; close all; clc
 fprintf('Loading data ...\n');
 
 %% Load Data
-data = load('data/multi_training_set.csv');
+data = load('data/experiment_1/multi_training_set.csv');
 X = data(:, 2:5);
 y = data(:, 6);
 m = length(y);
