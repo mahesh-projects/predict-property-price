@@ -1,0 +1,64 @@
+========================================================================================================================================
+Experiment 1: Train and test singleFeature and multiFeature linear reg models with sample size data
+========================================================================================================================================
+Conditions:
+
+Training Set:
+- size 100 rows
+- TrainingValues are normalized
+
+Testing Set:
+- Randomly select 3 test values (i.e. small, medium, large area values) from 20 test values
+
+
+NOTE:
+- House Type is NOT considered (anomolies large area low price if house type is apartment)
+- Suburb is NOT considered (model does not cater to proximity to city plays to predict house price)
+- geographies such as proximity to school, train station are NOT considered
+
+
+==================================================================================
+== linearReg_MultiFeature.m 
+== (i.e. use Area, #Bedroom, #Bathroom, #Carpark as features to predict sold price)
+===================================================================================
+
+Theta computed from gradient descent - Trial 2: 
+ 5.445937 
+ 0.660905 
+ 0.358514 
+ 0.492790 
+ 0.282351 
+
+Predicted price of a 1650 sq-ft, 3 br house (using gradient descent):
+ $657322.565898
+Predicted price of a 853 sq-m, 4 br house (using gradient descent):
+ $723236.597230
+Predicted price of a 190 sq-m, 3 br house (using gradient descent):
+ $489305.528973
+
+====================================================================
+== linearReg_SingleFeature.m 
+== (i.e. use Area as single feature to predict sold price)
+====================================================================
+
+Theta found by gradient descent: 4.575703 1.322713 
+For area = 1785 sq.m, we predict a sold price of:
+ $693674.663403
+For area = 853 sq.m, we predict a sold price of:
+ $570397.769008
+For area = 190 sq.m, we predict a sold price of:
+ $482701.866664
+
+===================================================================
+== Actual Values
+===================================================================
+
+Actual value for property 1785 sq.m (109954186,1.785,3,2,1,8)
+  $ 800000
+Actual value for property 853 sq.m (109754006,0.853,4,3,2,8.75)
+  $ 875000
+Actual value for property 190 sq.m (test data ref: 109795286,0.19,3,2,1,4.98)
+  $ 498000
+
+========================================================================================================================================
+========================================================================================================================================
