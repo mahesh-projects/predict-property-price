@@ -111,7 +111,7 @@ price = [1, X_house_norm] *theta; % You should change this
 
 % ======================================================================
 
-fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
+fprintf(['Predicted price of a 1650 sq-m, 3 br house ' ...
          '(using gradient descent):\n $%f\n'], price*100000);
 
 fprintf('Program paused. Press enter to continue.\n');
@@ -152,3 +152,38 @@ fprintf(['Predicted price of a 190 sq-m, 3 br house ' ...
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
+% Estimate the price of a 80 sq-m, 2 br house, 1 bathroom, 1 car park
+% ====================== YOUR CODE HERE ================================
+% Recall that the first column of X is all-ones. Thus, it does
+% not need to be normalized.
+X_house = [0.08, 2, 1, 1];
+X_house_norm = (X_house - mu) ./ sigma;
+
+
+price = [1, X_house_norm] *theta; % You should change this
+
+% ======================================================================
+
+fprintf(['Predicted price of a 80 sq-m, 2 br unit / apartment ' ...
+         '(using gradient descent):\n $%f\n'], price*100000);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+% Estimate the price of a 625 sq-m, 3 br house, 2 bathroom, 2 car park
+% ====================== YOUR CODE HERE ================================
+% Recall that the first column of X is all-ones. Thus, it does
+% not need to be normalized.
+X_house = [0.625, 4, 2, 2];
+X_house_norm = (X_house - mu) ./ sigma;
+
+
+price = [1, X_house_norm] *theta; % You should change this
+
+% ======================================================================
+
+fprintf(['Predicted price of a 625 sq-m, 4 br, 2 bath, 2 garage ' ...
+         '(using gradient descent):\n $%f\n'], price*100000);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
